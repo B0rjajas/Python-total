@@ -1,0 +1,37 @@
+{% extends "myapp/principal.html" %}
+
+{% block content %}
+
+<div class="barra-superior">
+    <h1> Ingresar </h1>
+
+</div>
+
+<div class="cuerpo-tarjeta">
+    <form method="POST">
+        {% csrf_token %}
+        <p>Vas Eliminar esta Tarea: "{{tarea}}"</p>
+        <input class="boton" type="submit" value="Eliminar">
+</form>
+    <p>¿No tienes una cuenta? <a href="{% url 'registro' %}">Regístrate aquí</a> </p>
+
+</div>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Ingresar</button>
+    </form>
+
+</body>
+</html>
+{%endblock content%}
